@@ -7,6 +7,7 @@
 
 - Minor issues:
   - Fix pyright pyspark issue
+  - Allow usage/inheritance tracking
 
 - Miscellaneous issues:
   - Set character limit to 120 (same as pycharm)
@@ -15,4 +16,6 @@
   - Add spelling check
   - Allow commenting multiple lines
   - Allow indenting/unindenting multiple lines
+  - Allow multiple tabs
+  - Add file tree view
 
