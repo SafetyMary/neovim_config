@@ -18,4 +18,7 @@
   - Allow multiple tabs
   - Add file tree view
   - Make LSP errors/warnings appear on next line
+  - Allow highlighting and moving the line (like hightlight with 'shift'+'ctrl'+up/down arrow key)
+  - Figure out a better way for autocomplete navigation and selection
+  - Fix TODO highlight in docstring
 
