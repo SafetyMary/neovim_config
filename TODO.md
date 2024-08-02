@@ -1,7 +1,6 @@
 # TODO items
 
 - Major issues:
-  - Fix nerd font missing icons
   - Disable autoformat on save
   - Share terminal and system clipbaord
 
