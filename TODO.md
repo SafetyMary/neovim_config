@@ -3,6 +3,7 @@
 - Major issues:
   - Fix nerd font missing icons
   - Disable autoformat on save
+  - Share terminal and system clipbaord
 
 - Minor issues:
   - Fix pyright pyspark issue
