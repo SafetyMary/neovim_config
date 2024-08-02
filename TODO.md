@@ -12,4 +12,5 @@
   - Add visual guide to 120 character limit
   - Add highlight support for line diff for git commit and merge requests
   - Add spelling check
+  - Allow commenting multiple lines
 
