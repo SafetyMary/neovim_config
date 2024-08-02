@@ -18,4 +18,5 @@
   - Allow indenting/unindenting multiple lines
   - Allow multiple tabs
   - Add file tree view
+  - Make LSP errors/warnings appear on next line
 
