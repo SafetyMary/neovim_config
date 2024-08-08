@@ -8,6 +8,7 @@
   - Fix pyright pyspark issue
   - Allow usage/inheritance tracking
   - Make LSP errors/warnings appear on next line
+    - Implement vim.diagnostic.open_float()
   - Allow multiple tabs
   - Add spelling check
   - Allow indenting/unindenting multiple lines
