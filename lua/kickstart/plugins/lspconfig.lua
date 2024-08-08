@@ -179,6 +179,16 @@ return {
         -- tsserver = {},
         --
 
+        -- Override ruff formatter settings here
+        ruff = {
+          settings = {lineLength = 1},
+          init_options = {
+            settings = {
+              lineLength = 1,
+            }
+          }
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
