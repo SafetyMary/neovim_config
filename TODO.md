@@ -14,6 +14,8 @@
   - Allow commenting multiple lines
   - Allow find all within project scope
   - Add auto close brackets
+  - Set up LSP and formatter for bash script
+    - shfmt, shellcheck, bash LSP
 
 - Miscellaneous issues:
   - Formater character limit
