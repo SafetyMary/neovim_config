@@ -179,13 +179,14 @@ return {
         -- tsserver = {},
         --
 
-        -- Override ruff formatter settings here
-        ruff = {
-          init_options = {
-            settings = {
-              lineLength = 120,
-              organizeImports = true,
-              fixAll = true, -- not sure if this replaces ruff_fix
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  maxLineLength = 120,
+                },
+              },
             },
           },
         },
@@ -219,7 +220,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'pyright',
+        'pylsp',
         'ruff',
         'sqlfluff',
         'prettier',
