@@ -176,9 +176,52 @@ return {
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        -- But for many setups, the LSP (`ts_ls`) will work just fine
+        -- ts_ls = {},
         --
+
+        -- make sure to manually install jpylsp plugins
+        -- https://github.com/williamboman/mason-lspconfig.nvim/tree/main/lua/mason-lspconfig/server_configurations/pylsp
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                flake8 = {
+                  enabled = true,
+                  maxLineLength = 120,
+                },
+                pycodestyle = {
+                  enabled = false, -- Included in flake8
+                  maxLineLength = 120,
+                },
+                mccabe = {
+                  enabled = false, -- Included in flake8
+                },
+                pyflakes = {
+                  enabled = false, -- Included in flake8
+                },
+                pydocstyle = {
+                  enabled = true,
+                  convention = 'google',
+                },
+                pylint = {
+                  enabled = true,
+                  args = {
+                    '--max-line-length',
+                    '120',
+                  },
+                },
+                rope_autoimport = {
+                  enabled = false,
+                },
+                rope_completion = {
+                  enabled = true,
+                  eager = true,
+                },
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -209,12 +252,16 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'pyright',
+        'pylsp',
         'ruff',
         'sqlfluff',
         'prettier',
         'markdownlint-cli2',
         'markdown-toc',
+        'jq',
+        'shellcheck',
+        'shfmt',
+        'bashls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -224,7 +271,7 @@ return {
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,

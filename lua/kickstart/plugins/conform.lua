@@ -10,6 +10,7 @@ vim.api.nvim_create_user_command('Format', function(args)
   end
   -- Use CLI args instead of LSP server settings
   require('conform').formatters.ruff_format = { append_args = { '--line-length', '120' } }
+  require('conform').formatters.sqlfluff = { append_args = { '--dialect', 'postgres' } }
   require('conform').format { async = true, lsp_format = 'fallback', range = range }
 end, { range = true })
 
@@ -42,6 +43,8 @@ return {
       {
         '<leader>f',
         function()
+          require('conform').formatters.ruff_format = { append_args = { '--line-length', '120' } }
+          require('conform').formatters.sqlfluff = { append_args = { '--dialect', 'postgres' } }
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
@@ -83,6 +86,8 @@ return {
         python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         sql = { 'sqlfluff' },
         markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
+        json = { 'prettier', 'jq' },
+        sh = { 'bashls', 'shfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
