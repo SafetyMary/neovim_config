@@ -14,6 +14,8 @@
   - Auto clean up lsp servers at VimEnter (disabled)
   - Add bashls as Bash LSP
   - Add sqlfluff as LSP
+  - Show line diagnostics in hover window with custom UI
+  - Show lsp error source
 
 - Treesitter
 
@@ -42,6 +44,7 @@
 
   - JetbrainsMonoNL Nerd Font Mono
   - Relative line number
+  - Add visual guide at 120 character limit
 
 - Vim functionality
   - Enable spelling check

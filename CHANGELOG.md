@@ -1,5 +1,12 @@
 # Version history
 
+- v1.0.0
+
+  - LSP
+    - Show line diagnostics in hover window with custom UI
+    - Show lsp error source
+    - Add visual guide at 120 character limit
+
 - v0.2.0
 
   - LSP
