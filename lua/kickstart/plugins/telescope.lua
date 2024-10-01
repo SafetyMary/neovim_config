@@ -5,6 +5,16 @@
 --
 -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
+-- check screen size for layout
+local function layout_strategy()
+  -- cannot compare width against height, as they return char and row count
+  if (vim.api.nvim_win_get_width(0) / 2) >= 100 then  -- 0 means current window
+    return 'horizontal'
+  else
+    return 'vertical'
+  end
+end
+
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -64,9 +74,10 @@ return {
 
         -- set vertical file preview
         defaults = {
-          layout_strategy = 'vertical',
+          layout_strategy = layout_strategy(),
           layout_config = {
             vertical = { width = 0.8 },
+            horizontal = { width = 0.8 },
           },
         },
 

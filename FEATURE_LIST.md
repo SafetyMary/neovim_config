@@ -39,6 +39,7 @@
 - Telescope
 
   - Change telescope UI into vertical mode
+  - Auto detect vertical/horizontal monitor for telescope layout
 
 - Miscellaneous changes
 
