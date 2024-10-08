@@ -17,6 +17,10 @@
   - Show line diagnostics in hover window with custom UI
   - Show lsp error source
 
+- CMP (auto complete)
+
+  - Add window for documentation during completion
+
 - Treesitter
 
   - Ensure languages are installed (e.g. python)
