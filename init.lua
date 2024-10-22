@@ -114,6 +114,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
     -- vim.cmd.PylspInstall { 'pylsp-mypy' }
     -- vim.cmd.PylspInstall { 'pylsp-rope' }
     -- vim.cmd 'MasonToolsClean'
+    -- vim.cmd.TSInstall { 'regex' }
     vim.cmd.setlocal { 'spell', 'spelllang=en_us' }
   end,
 })
